@@ -4,7 +4,7 @@ Version: 0.0.1.20170606
 Date: 2017-06-06
 Authors@R: person("John F.", "Arias", email = "johnfredyariasgiraldo@gmail.com", role = c("aut", "cre"))
 Description: Descarga precios de acciones, futuros, renta fija.
-Depends: R (>= 3.4.0)
+Depends: R (>= 3.4.0), xts, zoo
 License: ninguna
 Encoding: UTF-8
 LazyData: true
