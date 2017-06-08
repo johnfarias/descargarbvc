@@ -1,0 +1,14 @@
+Package: descargarbvc
+Title: Descarga Informacion BVC.
+Version: 0.0.1.20170606
+Date: 2017-06-06
+Authors@R: person("John F.", "Arias", email = "johnfredyariasgiraldo@gmail.com", role = c("aut", "cre"))
+Description: Descarga precios de acciones, futuros, renta fija.
+Depends: R (>= 3.4.0), XLConnect (>= 0.2-13), xts, zoo
+License: ninguna
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
