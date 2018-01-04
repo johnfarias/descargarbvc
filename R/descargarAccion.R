@@ -14,6 +14,7 @@ require(zoo)
 #' @param nemo Una cadena de texto o vector de cadenas de texto con el nemotecnico de la accion a descargar.
 #' @param fecha.ini Una fecha inicial para comenzar la descarga.
 #' @param fecha.fin Una fecha final para la descarga.
+#' @param mcdo Especifica el tipo de mercado. 1 = Compraventa. 2 = Repos. 3 = TTV. 4 = BOCEAs compraventa. 5 = BOCEAs Simultaneas.
 #' @param nombre.archivo Establece un nombre para el archivo descargado. Por defecto, es el nemotecnico.
 #' @note Por defecto, si no se ingresan fechas para fecha.ini y fecha.fin, descarga los precios de los ultimos 182 dias.
 #' @author John Fredy Arias
@@ -24,7 +25,7 @@ require(zoo)
 #' descargarAccion("TERPEL")
 #' descargarAccion(c("TERPEL","EEB")))
 #' descargarAccion("TERPEL",fecha.ini="2015-12-31",fecha.fin="2016-12-31")
-descargarAccion = function(nemo, fecha.ini = Sys.Date()-182, fecha.fin = Sys.Date(), nombre.archivo = nemo, dec=",", sep=";"){
+descargarAccion = function(nemo, fecha.ini = Sys.Date()-182, fecha.fin = Sys.Date(), mcdo=1, nombre.archivo = nemo, dec=",", sep=";"){
 	
 	## requiere el paquete XLConnect
 	require(XLConnect)
@@ -59,7 +60,7 @@ descargarAccion = function(nemo, fecha.ini = Sys.Date()-182, fecha.fin = Sys.Dat
 	for(s in 1:semestres){
 		
 		## especifica la url y el directorio de descarga
-		url = paste0("http://www.bvc.com.co/mercados/DescargaXlsServlet?archivo=acciones_detalle&nemo=",nemo,"&tipoMercado=1&fechaIni=",fi,"&fechaFin=",ff)
+		url = paste0("http://www.bvc.com.co/mercados/DescargaXlsServlet?archivo=acciones_detalle&nemo=",nemo,"&tipoMercado=",mcdo,"&fechaIni=",fi,"&fechaFin=",ff)
 		dir = paste0(ruta, "/Datos/", nombre.archivo)
 		
 		## procede descargar cada url
