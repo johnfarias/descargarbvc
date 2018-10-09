@@ -2,9 +2,9 @@
 # 
 # Author: JOHN FREDY ARIAS GIRALDO
 ###############################################################################
-library(XLConnect)
-require(xts)
-require(zoo)
+if (!require('XLConnect')) install.packages('XLConnect'); library(XLConnect)
+if (!require('xts')) install.packages('xts'); library(xts)
+if (!require('zoo')) install.packages('zoo'); library(zoo)
 #################################################################################
 ## DESCARGAR ACCIONES
 #################################################################################
